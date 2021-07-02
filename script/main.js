@@ -1,4 +1,5 @@
 // Animation Timeline
+let isReady = false
 const animationTimeline = () => {
   // Spit chars that needs to be animated individually
   const textBoxChars = document.getElementsByClassName("hbd-chatbox")[0];
@@ -298,11 +299,19 @@ const fetchData = () => {
 // Run fetch and animation in sequence
 const resolveFetch = () => {
   return new Promise((resolve, reject) => {
-    fetchData();
     resolve("Fetch done!");
+    fetchData();
   });
 };
 
 resolveFetch().then(() => {
-  setTimeout(animationTimeline(), 1000)
+  if (isReady) animationTimeline()
+
+  document.getElementById('play').addEventListener('click', function (event) {
+    document.getElementById('music').play()
+    document.getElementById('play').style.display = 'none'
+
+    isReady = true
+    animationTimeline()
+  })
 });

@@ -12,12 +12,13 @@
 </head>
 
 <body>
-  <!-- <iframe src="forever.mp3" allow="autoplay" id="audio" style="display: none"></iframe> -->
-  <audio controls autoplay loop>
+  <div style="position:fixed;top: 50%;left: 50%;transform: translate(-50%, -50%);">
+    <p style="cursor:pointer;text-align:center;" class="two" id="play">Ready to go? Click me.</p>
+  </div>
+  <audio controls loop style="display:none;" id="music">
     <source src="forever.mp3" type="audio/mpeg">
     Your browser does not support the audio element.
   </audio>
-
   <div class="container">
     <div class="one">
       <h1 class="one">Hey
@@ -123,8 +124,8 @@
       </svg>
     </div>
     <div class="nine">
-      <p>Okay, now come back and tell me if you liked it.</p>
-      <p id="replay">Or click, if you want to watch it again.</p>
+      <p>I LOVE U ❤️</p>
+      <p id="replay">Click if you want to watch it again.</p>
       <p class="last-smile">:)</p>
     </div>
   </div>
