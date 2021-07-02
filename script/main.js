@@ -183,7 +183,7 @@ const animationTimeline = () => {
       0.2
     )
     .from(
-      ".lydia-dp",
+      ".ama-dp",
       0.5,
       {
         scale: 3.5,
@@ -303,4 +303,6 @@ const resolveFetch = () => {
   });
 };
 
-resolveFetch().then(animationTimeline());
+resolveFetch().then(() => {
+  setTimeout(animationTimeline(), 1000)
+});
